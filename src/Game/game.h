@@ -32,11 +32,13 @@ class Game{
         SDL_Rect player1;
         SDL_Rect player2;
 
+        int player_speed = 30;
+
         SDL_Rect ball;
 
         int window_width, window_height;
 
-        float ball_x_speed = 0.2f; //0.4
+        float ball_x_speed = 0.4f; //0.4
         float ball_y_speed = 0.2f; //0.2
 
 };

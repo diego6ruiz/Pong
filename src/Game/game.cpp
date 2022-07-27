@@ -61,13 +61,13 @@ void Game::handleEvents()
                 //Player 1
                 case SDLK_w:
                     if(player1.y >= 0){
-                        player1.y -=10;
+                        player1.y -= player_speed;
                     }
                     
                 break;
                 case SDLK_s:
                     if(player1.y <= (window_height - player1.h)){
-                        player1.y +=10;
+                        player1.y += player_speed;
                     }
                     
                 break;
@@ -75,13 +75,13 @@ void Game::handleEvents()
                 //Player 2
                 case SDLK_UP:
                     if(player2.y >= 0){
-                        player2.y -=10;
+                        player2.y -= player_speed;
                     }
                     
                 break;
                 case SDLK_DOWN:
                     if(player2.y <= (window_height - player2.h)){
-                        player2.y +=10;
+                        player2.y += player_speed;
                     }
                     
                 break;
@@ -98,7 +98,7 @@ void Game::update()
 
     ball.y += ball_y_speed * delta_time;
     if((ball.y > (window_height - ball.h)) || (ball.y < 0)){
-        ball_y_speed *= -1.05f;
+        ball_y_speed *= -1.1f;
     }
 
     ball.x += ball_x_speed * delta_time;
@@ -108,7 +108,7 @@ void Game::update()
         {
             if(ball.x <= 0 + player1.w)
             {
-                ball_x_speed *= -1.05f;
+                ball_x_speed *= -1.1f;
             }
         }
         if(ball.x <= 0)
@@ -125,7 +125,7 @@ void Game::update()
         {
             if(ball.x >= (window_width - ball.w - player2.w))
             {
-                ball_x_speed *= -1.05f;
+                ball_x_speed *= -1.1f;
             }
         }
         if(ball.x >= window_width - ball.w)
